@@ -9,10 +9,10 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/lib/',
-    filename: 'color-picker.js',
+    filename: 'drag-editor.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'COLORPICKER',
+    library: 'DRAGEDITOR',
     libraryTarget: 'umd'
   },
   resolve: {

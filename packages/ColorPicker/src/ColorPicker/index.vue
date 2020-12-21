@@ -47,11 +47,11 @@ export default {
   props: {
     zoomSize: {
       type: Number,
-      default: 300,
+      default: 250,
     },
     pixelNumber: {
       type: Number,
-      default: 19,
+      default: 13,
     },
     target: String,
   },

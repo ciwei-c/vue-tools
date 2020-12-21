@@ -2,15 +2,14 @@
   "name": "color-picker",
   "version": "1.0.0",
   "description": "color picker",
-  "main": "lib/index.js",
+  "main": "lib/color-picker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && webpack --config ./build/webpack.config.js",
     "dev": "webpack --watch --config ./build/webpack.config.js",
     "clean": "rimraf lib"
   },
-  "author": "309491435@qq.com",
-  "license": "ISC",
+  "author": "ciwei_c@163.com",
   "devDependencies": {
     "babel-loader": "^8.2.2",
     "html2canvas": "^1.0.0-rc.7",

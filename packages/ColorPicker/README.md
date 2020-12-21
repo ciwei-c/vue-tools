@@ -1,1 +1,1 @@
-# color-sucker
+# color-picker
