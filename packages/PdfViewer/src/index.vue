@@ -130,7 +130,7 @@ export default {
       width: 0;
       padding-bottom: 10px;
       background: #3d3d3d;
-      height: 100%;
+      height: calc(100% - 10px);
       width: 100%;
       position: absolute;
       top: 0;

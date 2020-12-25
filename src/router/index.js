@@ -32,6 +32,16 @@ const routes = [
     path: '/selection',
     name: 'Selection',
     component: () => import(/* webpackChunkName: "Selection" */ '../views/Selection')
+  },
+  {
+    path: '/tree-generator',
+    name: 'TreeGenerator',
+    component: () => import(/* webpackChunkName: "TreeGenerator" */ '../views/TreeGenerator')
+  },
+  {
+    path: '/pixel',
+    name: 'Pixel',
+    component: () => import(/* webpackChunkName: "Pixel" */ '../views/Pixel')
   }
 ]
 

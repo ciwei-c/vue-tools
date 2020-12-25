@@ -23,7 +23,7 @@ export default {
 .file-reader-excel__toolbar {
   background: #292929;
   display: flex;
-  height: 42px;
+  height: 40px;
   padding-left: 12px;
   align-items: center;
   &-left {

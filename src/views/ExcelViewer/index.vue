@@ -1,5 +1,5 @@
 <template>
-  <div style="height:calc(100% - 10px)">
+  <div>
     <excel-viewer url="/test.xlsx"/>
   </div>
 </template>

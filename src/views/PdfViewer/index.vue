@@ -1,5 +1,5 @@
 <template>
-  <div class="tools__pdf-viewer">
+  <div>
     <pdf-viewer :url="'/compressed.pdf'"></pdf-viewer>
   </div>
 </template>
@@ -15,7 +15,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tools__pdf-viewer {
-  height: calc(100% - 10px);
-}
 </style>

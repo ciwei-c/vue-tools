@@ -1,6 +1,6 @@
 <template>
-  <div style="height:100%">
-    <drag-editor :image="require('./bankbill01.png')"></drag-editor>
+  <div>
+    <drag-editor :image="require('./test.jpg')"></drag-editor>
   </div>
 </template>
 

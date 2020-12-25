@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <tree-generator />
+  </div>
 </template>
 
 <script>

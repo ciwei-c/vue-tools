@@ -3,7 +3,6 @@ export default class SheetReader {
     this.sheets = {}
     this.xlsx = xlsx
     this.sheetNames = workbook.SheetNames
-    console.log(workbook)
     this.read(workbook.SheetNames, workbook.Sheets)
   }
 

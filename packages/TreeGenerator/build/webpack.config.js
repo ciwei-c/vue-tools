@@ -9,17 +9,17 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/lib/',
-    filename: 'color-picker.js',
+    filename: 'tree-generator.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'COLORPICKER',
+    library: 'tree-generator',
     libraryTarget: 'umd'
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', '.scss'],
     modules: ['node_modules'],
     alias: {
-      "@color-picker": path.resolve("./src")
+      "@tree-generator": path.resolve("./src")
     }
   },
   module: {

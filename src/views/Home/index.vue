@@ -36,7 +36,19 @@ export default {
           icon: require("@/assets/selection.png"),
           bgcolor:"#606266",
           router:"/selection"
-        }
+        },
+        {
+          label: "像素",
+          icon: require("@/assets/pixel.png"),
+          bgcolor:"#f5f5f5",
+          router:"/pixel"
+        },
+        // {
+        //   label: "树",
+        //   icon: require("@/assets/tree.png"),
+        //   bgcolor:"#4a3838",
+        //   router:"/tree-generator"
+        // }
       ],
     };
   },
@@ -44,10 +56,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tools__home {
-  padding: 20px;
   &-tool {
     text-align: center;
-    margin-right: 20px;
+    margin: 20px;
     display: inline-flex;
     width: 300px;
     align-items: center;

@@ -1,8 +1,8 @@
 {
-  "name": "drag-editor",
+  "name": "pdf-viewer",
   "version": "1.0.0",
-  "description": "drag-editor",
-  "main": "lib/drag-editor.js",
+  "description": "pdf-viewer",
+  "main": "lib/pdf-viewer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && webpack --config ./build/webpack.config.js",
