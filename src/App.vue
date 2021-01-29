@@ -8,6 +8,7 @@
 </template>
 <script>
 import CommonHeader from "@/components/Header";
+import 'css-doodle'
 export default {
   components: { CommonHeader },
 };

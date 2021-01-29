@@ -1,0 +1,133 @@
+{
+  "tag": "el-input",
+  "name": "Input",
+  "title": "文本框",
+  "icon": "dynamic-form-icon-input",
+  "categories": "表单控件",
+  "props": {
+    "element": [
+      {
+        "name": "type",
+        "label": "文本框类型",
+        "description": "文本框类型",
+        "type": "string",
+        "optionalValue": [
+          {
+            "value": "text",
+            "label": "单行文本框"
+          },
+          {
+            "value": "textarea",
+            "label": "多行文本框"
+          }
+        ],
+        "value": "text"
+      },
+      {
+        "name": "rows",
+        "label": "行高",
+        "description": "输入框行数，只对 type='textarea' 有效",
+        "type": "number",
+        "value": 2
+      },
+      {
+        "name": "maxlength",
+        "label": "最大输入长度",
+        "description": "原生属性，最大输入长度",
+        "type": "number",
+        "value": 100
+      },
+      {
+        "name": "minlength",
+        "label": "最小输入长度",
+        "description": "原生属性，最小输入长度",
+        "type": "number",
+        "value": 0
+      },
+      {
+        "name": "show-word-limit",
+        "label": "显示输入字数统计",
+        "description": "是否显示输入字数统计，只在 type = 'text' 或 type = 'textarea' 时有效",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "placeholder",
+        "label": "占位内容",
+        "description": "输入框占位文本",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "name": "clearable",
+        "label": "可清空",
+        "description": "是否可清空",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "show-password",
+        "label": "显示切换密码图标",
+        "description": "是否显示切换密码图标",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "disabled",
+        "label": "禁用",
+        "description": "禁用",
+        "type": "boolean",
+        "defaultValue": false,
+        "value": false
+      },
+      {
+        "name": "readonly",
+        "label": "只读",
+        "description": "原生属性，是否只读",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "size",
+        "label": "尺寸",
+        "description": "输入框尺寸，只在 type!='textarea' 时有效",
+        "type": "string",
+        "optionalValue": [
+          {
+            "value": "",
+            "label": "默认尺寸"
+          },
+          {
+            "value": "medium",
+            "label": "中尺寸"
+          },
+          {
+            "value": "small",
+            "label": "小尺寸"
+          },
+          {
+            "value": "mini",
+            "label": "迷你尺寸"
+          }
+        ],
+        "value": ""
+      },
+      {
+        "name": "prefix-icon",
+        "label": "前缀图标",
+        "description": "输入框头部图标",
+        "type": "string",
+        "componentType": "icon",
+        "value": ""
+      },
+      {
+        "name": "suffix-icon",
+        "label": "后缀图标",
+        "description": "输入框尾部图标",
+        "type": "string",
+        "componentType": "icon",
+        "value": ""
+      }
+    ]
+  }
+  }

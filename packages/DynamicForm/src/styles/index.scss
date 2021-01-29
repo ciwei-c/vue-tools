@@ -1,0 +1,21 @@
+@import "@dynamic-form/icons/iconfont.css";
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #c1c1c1;
+}
+
+.el-table-column--selection > .cell {
+  padding-left: 14px !important;
+}

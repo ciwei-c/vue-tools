@@ -1,0 +1,116 @@
+{
+  "tag": "el-button",
+  "name": "Button",
+  "title": "按钮",
+  "icon": "dynamic-form-icon-button",
+  "categories": "其他",
+  "props": {
+    "element": [
+      {
+        "name": "size",
+        "label": "尺寸",
+        "description": "尺寸",
+        "type": "string",
+        "optionalValue": [
+          {
+            "value": "",
+            "label": "默认尺寸"
+          },
+          {
+            "value": "medium",
+            "label": "中尺寸"
+          },
+          {
+            "value": "small",
+            "label": "小尺寸"
+          },
+          {
+            "value": "mini",
+            "label": "迷你尺寸"
+          }
+        ],
+        "value": "mini"
+      },
+      {
+        "name": "type",
+        "label": "类型",
+        "description": "类型",
+        "type": "string",
+        "optionalValue": [
+          {
+            "value": "default",
+            "label": "default"
+          },
+          {
+            "value": "primary",
+            "label": "primary"
+          },
+          {
+            "value": "success",
+            "label": "success"
+          },
+          {
+            "value": "warning",
+            "label": "warning"
+          },
+          {
+            "value": "danger",
+            "label": "danger"
+          },
+          {
+            "value": "info",
+            "label": "info"
+          },
+          {
+            "value": "text",
+            "label": "text"
+          }
+        ],
+        "value": "default"
+      },
+      {
+        "name": "plain",
+        "label": "是否朴素按钮",
+        "description": "是否朴素按钮",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "round",
+        "label": "是否圆角按钮",
+        "description": "是否圆角按钮",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "circle",
+        "label": "是否圆形按钮",
+        "description": "是否圆形按钮",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "loading",
+        "label": "是否加载中状态",
+        "description": "是否加载中状态",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "disabled",
+        "label": "是否禁用状态",
+        "description": "是否禁用状态",
+        "type": "boolean",
+        "value": false
+      },
+      {
+        "name": "icon",
+        "label": "图标类名",
+        "description": "图标类名",
+        "type": "string",
+        "componentType": "icon",
+        "value": ""
+      }
+    ]
+  }
+}

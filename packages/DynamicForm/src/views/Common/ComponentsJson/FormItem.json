@@ -1,0 +1,32 @@
+{
+  "tag": "el-form-item",
+  "name": "FormItem",
+  "title": "表单项",
+  "icon": "",
+  "categories": "表单",
+  "props": {
+    "element": [
+      {
+        "name": "prop",
+        "label": "属性名",
+        "description": "属性名",
+        "type": "string",
+        "value": "prop"
+      },
+      {
+        "name": "label",
+        "label": "标签名",
+        "description": "标签",
+        "type": "string",
+        "value": "标签"
+      },
+      {
+        "name": "labelWidth",
+        "label": "标签宽度",
+        "description": "标签宽度",
+        "type": "string",
+        "value": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "dynamic-form",
+  "version": "1.0.0",
+  "description": "dynamic-form",
+  "main": "lib/dynamic-form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack --config ./build/webpack.config.js",
+    "dev": "webpack --watch --config ./build/webpack.config.js",
+    "clean": "rimraf lib"
+  },
+  "author": "ciwei_c@163.com",
+  "devDependencies": {
+    "sortablejs": "^1.13.0",
+    "webpack-cli": "^4.2.0",
+    "worker-loader": "^3.0.6"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "css-loader": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.5",
+    "webpack": "^4.32.2"
+  }
+}

@@ -42,6 +42,11 @@ const routes = [
     path: '/pixel',
     name: 'Pixel',
     component: () => import(/* webpackChunkName: "Pixel" */ '../views/Pixel')
+  },
+  {
+    path: '/dynamic-form',
+    name: 'DynamicForm',
+    component: () => import(/* webpackChunkName: "DynamicForm" */ '../views/DynamicForm')
   }
 ]
 

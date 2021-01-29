@@ -4,12 +4,35 @@
       <div class="tools__home-tool-shadow" :style="{background:tool.bgcolor}"></div>
       <img :src="tool.icon" alt="" />
     </router-link>
+    <div style="position:absolute;top:0;overflow:hidden;height:100%">
+      <css-doodle click-to-update>
+        :doodle {
+          @grid: 20 / 100vmax;
+          background: #0a0c27;
+        }
+        --hue: calc(180 + 1.5 * @row * @col);
+        background: hsl(var(--hue), 50%, 70%);
+        margin: -.5px;
+        transition: @r(.5s) ease;
+        clip-path: polygon(@pick(
+          '0 0, 100% 0, 100% 100%',
+          '0 0, 100% 0, 0 100%',
+          '0 0, 100% 100%, 0 100%',
+          '100% 0, 100% 100%, 0 100%'
+        ));
+      </css-doodle>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   components: {},
+  methods:{
+    onClickDoodle(e){
+      console.log(e)
+    }
+  },
   data() {
     return {
       tools: [
@@ -48,7 +71,13 @@ export default {
         //   icon: require("@/assets/tree.png"),
         //   bgcolor:"#4a3838",
         //   router:"/tree-generator"
-        // }
+        // },
+        {
+          label: "动态表单",
+          icon: require("@/assets/form.png"),
+          bgcolor:"#d8f7f4",
+          router:"/dynamic-form"
+        }
       ],
     };
   },
@@ -56,6 +85,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tools__home {
+  position: relative;
   &-tool {
     text-align: center;
     margin: 20px;
@@ -69,6 +99,7 @@ export default {
     z-index: 2;
     position: relative;
     img {
+      user-select: none;
       width: 40%;
     }
     &:hover {

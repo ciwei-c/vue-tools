@@ -9,8 +9,9 @@ import ColorPicker from "../packages/ColorPicker/lib/color-picker"
 import ExcelViewer from "../packages/ExcelViewer/lib/excel-viewer"
 import DragEditor from "../packages/DragEditor/lib/drag-editor"
 import Pixel from "../packages/Pixel/lib/pixel"
-// import TreeGenerator from "../packages/TreeGenerator/lib/tree-generator"
+import TreeGenerator from "../packages/TreeGenerator/lib/tree-generator"
 import PdfViewer from "../packages/PdfViewer/src/index.js"
+import DynamicForm from "../packages/DynamicForm/lib/dynamic-form"
 import ElementUI from 'element-ui'
 
 Vue.use(ElementUI)
@@ -19,7 +20,8 @@ Vue.use(ExcelViewer)
 Vue.use(DragEditor)
 Vue.use(PdfViewer)
 Vue.use(Pixel)
-// Vue.use(TreeGenerator)
+Vue.use(TreeGenerator)
+Vue.use(DynamicForm)
 
 new Vue({
   router,
