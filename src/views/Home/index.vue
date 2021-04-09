@@ -77,6 +77,12 @@ export default {
           icon: require("@/assets/form.png"),
           bgcolor:"#d8f7f4",
           router:"/dynamic-form"
+        },
+        {
+          label: "矩形树",
+          icon: require("@/assets/treemap.png"),
+          bgcolor:"#d8f7f4",
+          router:"/squarified"
         }
       ],
     };

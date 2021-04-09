@@ -2,7 +2,9 @@
 import {
   setSortable,
   draggableClassName,
-  draggableActiveClassName
+  draggableActiveClassName,
+  getItemParentPath,
+  getItemIndex
 } from "@dynamic-form/views/Common/Drag";
 export default {
   render() {
@@ -32,6 +34,7 @@ export default {
     formItem: Object,
     isActive: Function,
     getFormItemJsx: Function,
+    sortEnd: Function
   },
   data() {
     return {
@@ -58,8 +61,15 @@ export default {
                 name: "components",
               },
               animation: 150,
-              onEnd: function (evt) {
-                console.log(evt);
+              onStart: (evt) => {
+                this.dragStartData = {
+                  parentPath:getItemParentPath(evt.item.parentNode),
+                  index:getItemIndex(evt.item)
+                }
+              },
+              onEnd: (evt) => {
+                this.sortEnd(evt, this.dragStartData)
+                this.dragStartData = null
               },
             });
           }

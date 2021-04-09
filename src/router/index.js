@@ -39,6 +39,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "TreeGenerator" */ '../views/TreeGenerator')
   },
   {
+    path: '/squarified',
+    name: 'Squarified',
+    component: () => import(/* webpackChunkName: "Squarified" */ '../views/Squarified')
+  },
+  {
     path: '/pixel',
     name: 'Pixel',
     component: () => import(/* webpackChunkName: "Pixel" */ '../views/Pixel')

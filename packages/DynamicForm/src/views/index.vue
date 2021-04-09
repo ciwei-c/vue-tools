@@ -10,6 +10,7 @@
 import CenterPanel from "./CenterPanel";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
+import { deepClone } from "@dynamic-form/views/Common/utils.js";
 export default {
   components: { LeftPanel, CenterPanel, RightPanel },
   computed: {
@@ -54,18 +55,41 @@ export default {
         }
       })
     },
+    getChildrenIndexsAndCurrent(current, parentPath){
+      let childrenIndexs = []
+      parentPath = deepClone(parentPath)
+      while(parentPath.length) {
+        let idx = current.findIndex(v=>v.id === parentPath[0])
+        childrenIndexs.push(idx)
+        parentPath.splice(0,1)
+        current = current[idx].children
+      }
+      return {
+        childrenIndexs,
+        current
+      }
+    },
+    getIndexMetaFromFormItems(index, parentPath){
+      if(parentPath.length) {
+        let { current } = this.getChildrenIndexsAndCurrent(this.formItems, parentPath)
+        return deepClone(current[index])
+      } else {
+        return deepClone(this.formItems[index])
+      }
+    },
+    removeIndexMetaFromFormItems(index, parentPath) {
+      if(parentPath.length) {
+        let { current, childrenIndexs } = this.getChildrenIndexsAndCurrent(this.formItems, parentPath)
+        current.splice(index, 1)
+        this.formItems = this.getUpdateData(this.formItems, childrenIndexs, 0, current)
+      } else {
+        this.formItems.splice(index, 1)
+      }
+    },
     pushSomeIndexMetaToFormItems(meta, index, parentPath){
       if(parentPath.length) {
-        let childrenIndexs = []
-        let current = this.formItems
-        while(parentPath.length) {
-          let idx = current.findIndex(v=>v.id === parentPath[0])
-          childrenIndexs.push(idx)
-          parentPath.splice(0,1)
-          current = current[idx].children
-        }
-        current = this.pushSomeIndexMetaToList(current, meta, index)
-        this.formItems = this.getUpdateData(this.formItems, childrenIndexs, 0, current)
+        let { current, childrenIndexs } = this.getChildrenIndexsAndCurrent(this.formItems, parentPath)
+        this.formItems = this.getUpdateData(this.formItems, childrenIndexs, 0, this.pushSomeIndexMetaToList(current, meta, index))
       } else {
         this.formItems = this.pushSomeIndexMetaToList(this.formItems, meta, index)
       }

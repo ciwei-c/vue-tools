@@ -23,7 +23,7 @@
 import parentInstInjectMixin from "@dynamic-form/views/Common/parentInstInjectMixin";
 import Components from "@dynamic-form/views/Common/ComponentsJson";
 import config from "@dynamic-form/views/Common/config";
-import { setSortable, draggableClassName } from "@dynamic-form/views/Common/Drag";
+import { setSortable, draggableClassName, getItemParentPath, getItemIndex } from "@dynamic-form/views/Common/Drag";
 import { FormJsonFactory } from "@dynamic-form/views/Common/parse"
 export default {
   mixins: [parentInstInjectMixin],
@@ -48,8 +48,8 @@ export default {
           sort: false,
           onEnd: (evt) => {
             if(evt.to === ref) return
-            let parentPath = this.getItemParentPath(evt.item.parentNode)
-            let index = this.getItemIndex(evt.item)
+            let parentPath = getItemParentPath(evt.item.parentNode)
+            let index = getItemIndex(evt.item)
             let formJsonFactory = new FormJsonFactory()
             this.topParentInst.pushSomeIndexMetaToFormItems(formJsonFactory.getFormItemJson(evt.item.dataset.componentName), index, parentPath)
             evt.item.remove()
@@ -68,22 +68,6 @@ export default {
         components[v.categories].push(v)
       })
       this.components = components
-    },
-    getItemParentPath(node){
-      let path = []
-      while(node.className.indexOf("dynamic-form__drag-wrap") === -1){
-        path.unshift(node.id)
-        node = node.parentNode
-      }
-      return path
-    },
-    getItemIndex(node){
-      let idx = 0
-      while(node.previousSibling) {
-        idx ++;
-        node = node.previousSibling;
-      }
-      return idx
     }
   }
 };

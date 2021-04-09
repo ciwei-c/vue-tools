@@ -4,6 +4,8 @@ import {
   setSortable,
   draggableClassName,
   draggableActiveClassName,
+  getItemParentPath, 
+  getItemIndex
 } from "@dynamic-form/views/Common/Drag";
 import DynamicComponent from "./DynamicComponent";
 import DynamicContainer from "./DynamicContainer";
@@ -37,12 +39,27 @@ export default {
         name: "components",
       },
       animation: 150,
-      onEnd: function (evt) {
-        console.log(evt);
+      onStart: (evt) => {
+        this.dragStartData = {
+          parentPath:getItemParentPath(evt.item.parentNode),
+          index:getItemIndex(evt.item)
+        }
+      },
+      onEnd: (evt) => {
+        this.onSortEnd(evt)
       },
     });
   },
   methods: {
+    onSortEnd(evt, dragStartData){
+      this.dragStartData = this.dragStartData || dragStartData
+      let meta = this.topParentInst.getIndexMetaFromFormItems(this.dragStartData.index, this.dragStartData.parentPath)
+      this.topParentInst.removeIndexMetaFromFormItems(this.dragStartData.index, this.dragStartData.parentPath)
+      let parentPath = getItemParentPath(evt.item.parentNode)
+      let index = getItemIndex(evt.item)
+      this.topParentInst.pushSomeIndexMetaToFormItems(meta, index, parentPath)
+      this.dragStartData = null
+    },
     getFormItemJsx(formItem) {
       let jsx = null;
       let strategy = {
@@ -87,6 +104,7 @@ export default {
           isActive={(v) => this.isActive(v)}
           on-click={() => this.onSelectFormItem(formItem)}
           getFormItemJsx={(v) => this.getFormItemJsx(v)}
+          sortEnd={(evt, dragStartData) => this.onSortEnd(evt, dragStartData)}
         ></dynamic-container>
       );
     },
@@ -121,7 +139,6 @@ export default {
       return is;
     },
     onSelectFormItem(formItem) {
-      console.log(formItem);
       this.topParentInst.onSelectFormItem(formItem);
     },
   },

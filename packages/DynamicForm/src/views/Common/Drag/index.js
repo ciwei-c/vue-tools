@@ -9,3 +9,21 @@ export const setSortable = (el, options) => {
     ghostClass: "dynamic-form__sortable-ghost"
   }, options))
 }
+
+export const getItemParentPath = (node) => {
+  let path = []
+  while(node.className.indexOf("dynamic-form__drag-wrap") === -1){
+    path.unshift(node.id)
+    node = node.parentNode
+  }
+  return path
+}
+
+export const getItemIndex = (node) => {
+  let idx = 0
+  while(node.previousSibling) {
+    idx ++;
+    node = node.previousSibling;
+  }
+  return idx
+}
